@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> the ocean </title>
+  <style>
+    /* Remove default link styles */
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+
+    /* Set HTML and body to 100% height */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Container for columns */
+    #columnContainer {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      /* Set container height to 100% */
+    }
+
+    /* Style for individual columns */
+    .column {
+      flex: 1;
+      padding: 10px;
+      height: 100%;
+      /* Set column height to 100% */
+      overflow-y: auto;
+      /* Add scrollbar if content overflows */
+    }
+
+    /* Style for paragraphs */
+    .paragraph {
+      margin: 0;
+      padding: 5px;
+      font-family: "Andale Mono";
+    font-size: 20 px;
+ 
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Container for columns -->
+  <div id="columnContainer"></div>
+
+  <!-- Script to handle automatic addition of paragraphs with random words -->
+  <script>
+    var columns = 10; // Number of columns
+    var maxParagraphsPerColumn = 14; // Maximum paragraphs per column
+    var intervalDuration = 100; // Initial interval duration in milliseconds
+    var currentColumn = 0;
+    var currentParagraphCount = 0;
+
+    var wordLists = [
+      ["star", "ocean", "sword", "mouth", "mother"],
+      ["marble", "cold", "blue", "stone", "base"],
+      ["of", "my", "little", "there", "are", "on", ";", "-", ".", "(", ")", "small", "languid", "dance", "lilt", "?", "what is", "you", "near", "basement" ]
+      // Add more word lists as needed
+    ];
+
+    function getRandomWordList() {
+      var randomIndex = Math.floor(Math.random() * wordLists.length);
+      return wordLists[randomIndex];
+    }
+
+    function getRandomArrangement(words) {
+      return words.slice().sort(function () {
+        return 0.5 - Math.random();
+      }).join(' ');
+    }
+
+    function addRandomParagraph() {
+      // Create a new paragraph element
+      var newParagraph = document.createElement("p");
+      newParagraph.className = "paragraph";
+
+      // Get a random word list and create a random arrangement of words
+      var randomWords = getRandomWordList();
+      var randomArrangement = getRandomArrangement(randomWords);
+
+      newParagraph.innerHTML = randomArrangement;
+
+      // Check if the current column has reached the maximum paragraphs
+      if (currentParagraphCount >= maxParagraphsPerColumn) {
+        // Move to the next column
+        currentColumn = (currentColumn + 1) % columns;
+        currentParagraphCount = 0;
+
+        // If all columns are filled, reset and start again
+        if (currentColumn === 0) {
+          document.getElementById("columnContainer").innerHTML = '';
+        }
+      }
+
+      // Create columns if they don't exist
+      var columnsContainer = document.getElementById("columnContainer");
+      if (!columnsContainer.children[currentColumn]) {
+        var column = document.createElement("div");
+        column.className = "column";
+        columnsContainer.appendChild(column);
+      }
+
+      // Append the new paragraph to the current column
+      columnsContainer.children[currentColumn].appendChild(newParagraph);
+
+      // Increment the paragraph count
+      currentParagraphCount++;
+    }
+
+    // Set the initial interval
+    var intervalId = setInterval(addRandomParagraph, intervalDuration);
+  </script>
+
+</body>
+
+</html>
