@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Tarot</title>
+    <title>Swiper demo</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
@@ -27,15 +27,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #eee;
+        background: #060309;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color: #000;
       }
 
       .swiper {
-        width: 260px;
-        height: 460px;
+        width: 290px;
+        height: 610px;
       }
 
       .swiper-slide {
@@ -44,7 +44,14 @@
         justify-content: center;
         border-radius: 18px;
         overflow: hidden;
-        background: #fff;
+        outline: 1px solid #999c93;
+        box-shadow: 0 0 20px rgba(120, 123, 120, 0.6);
+        transition: box-shadow 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+      }
+
+      .swiper-slide:hover {
+        box-shadow: 0 0 20px rgba(216, 215, 215, 0.8);
+        outline-color: rgba(253, 253, 253, 0.8);
       }
 
       .swiper-slide img {
@@ -59,17 +66,28 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="Images/fool.jpeg" alt="Slide 1" /></div>
-        <div class="swiper-slide"><img src="Images/magician.jpeg" alt="Slide 2" /></div>
-        <div class="swiper-slide"><img src="Images/priestess.jpeg" alt="Slide 3" /></div>
-        <div class="swiper-slide"><img src="Images/emperor.jpeg" alt="Slide 4" /></div>
-        <div class="swiper-slide"><img src="Images/heirophant.jpg" alt="Slide 5" /></div>
-        <div class="swiper-slide"><img src="Images/lovers.jpg" alt="Slide 6" /></div>
-        <div class="swiper-slide"><img src="Images/chariot.jpg" alt="Slide 7" /></div>
-        <div class="swiper-slide"><img src="Images/strength.jpg" alt="Slide 8" /></div>
-        <div class="swiper-slide"><img src="Images/hermit.jpg" alt="Slide 9" /></div>
-        <div class="swiper-slide"><img src="Images/Wheel.jpg" alt="Slide 10" /></div>
-        <div class="swiper-slide"><img src="Images/justice.jpg" alt="Slide 11" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Fool.PNG" alt="Slide 1" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Magician.PNG" alt="Slide 2" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/High Priestess.PNG" alt="Slide 3" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Empress.PNG" alt="Slide 4" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Emperor.PNG" alt="Slide 5" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Hierophant.PNG" alt="Slide 6" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Lovers.PNG" alt="Slide 7" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Chariot.PNG" alt="Slide 8" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Justice.PNG" alt="Slide 9" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Hermit.PNG" alt="Slide 10" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Wheel.PNG" alt="Slide 11" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Strength.PNG" alt="Slide 12" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Hanged Man.PNG" alt="Slide 13" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Death.PNG" alt="Slide 14" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Temperance.PNG" alt="Slide 15" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Devil.PNG" alt="Slide 16" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/House.PNG" alt="Slide 17" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Star.PNG" alt="Slide 18" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Moon.PNG" alt="Slide 19" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Sun.PNG" alt="Slide 20" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/Judgement.PNG" alt="Slide 21" /></div>
+        <div class="swiper-slide"><img src="Tarot Cards/World.PNG" alt="Slide 22" /></div>
       </div>
     </div>
 
